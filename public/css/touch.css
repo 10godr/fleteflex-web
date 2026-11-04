@@ -1,0 +1,12 @@
+/*
+ * Adaptación a pantallas táctiles: los enlaces sueltos (fuera de párrafos) miden al menos 44 px de alto.
+ * Solo con puntero grueso, para no engordar la versión de escritorio.
+ */
+@media (pointer: coarse) {
+  .link-text,
+  .contact__lines a,
+  .site-footer a:not(.btn),
+  .menu__contact a {
+    padding-block: 12px;
+  }
+}

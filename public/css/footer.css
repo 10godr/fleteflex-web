@@ -1,0 +1,122 @@
+.site-footer {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(48px, 7vw, 96px) 32px;
+  background: var(--bg);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: 32px;
+}
+
+/* El enlace del logo envuelve un bloque: se vuelve bloque para recibir el relleno de la zona táctil */
+.site-footer__home {
+  display: block;
+  width: fit-content;
+}
+
+.site-footer__logo {
+  width: clamp(200px, 22vw, 280px);
+  height: auto;
+}
+
+.site-footer__tagline {
+  max-width: 24rem;
+  margin-top: 16px;
+  font-size: var(--fs-lead);
+  color: var(--fg-muted);
+}
+
+.site-footer nav,
+.site-footer__contact {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+}
+
+.site-footer a:not(.btn) {
+  width: fit-content;
+  padding-block: 6px;
+  color: var(--fg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-footer a:not(.btn):hover {
+    color: var(--green-soft);
+  }
+}
+
+.site-footer__legal {
+  margin-top: clamp(32px, 5vw, 64px);
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+@media (min-width: 900px) {
+  .site-footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+/* Botón flotante de WhatsApp (aparece al salir del hero para no tapar la tarjeta de orígenes) */
+.wa-float {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 20px 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--green-deep);
+  color: var(--white);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgb(4 13 27 / 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition:
+    opacity 300ms ease,
+    transform 300ms var(--ease-out);
+}
+
+.wa-float.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.wa-float.is-visible:active {
+  transform: scale(0.96);
+}
+
+.wa-float svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 479px) {
+  .wa-float span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .wa-float {
+    padding: 0 13px;
+  }
+}
+
+@media (max-width: 599px) {
+  .site-footer {
+    padding-bottom: calc(32px + 72px + env(safe-area-inset-bottom, 0px));
+  }
+}

@@ -1,0 +1,70 @@
+/*
+ * Resiliencia: lo que mantiene la página usable con contenido largo, pantallas angostas, modo de alto
+ * contraste y sin JavaScript. Se carga antes de reduced-motion.css.
+ */
+
+/* Los hijos de una grilla o flex pueden encogerse por debajo de su contenido (evita desbordes) */
+.about__grid > *,
+.quote__grid > *,
+.journey__grid > *,
+.enterprise__grid > *,
+.contact__grid > *,
+.site-footer__grid > *,
+.quote-form__row > *,
+.slide > *,
+.slide__panel > * {
+  min-width: 0;
+}
+
+/* Palabras o correos muy largos se parten en lugar de salirse de su caja */
+.slide__list li,
+.field label,
+.field__error,
+.contact__lines a,
+.site-footer a,
+.quote-form__status,
+.stat span {
+  overflow-wrap: anywhere;
+}
+
+/* Aviso cuando JavaScript no está disponible (el formulario y el slider lo necesitan) */
+.noscript-note {
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-size: 1rem;
+}
+
+.noscript-note a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Modo de alto contraste de Windows: los fondos de color se sustituyen, así que se marcan con bordes */
+@media (forced-colors: active) {
+  .btn,
+  .arrow-btn,
+  .menu-toggle,
+  .network__origins a,
+  .route-card,
+  .stat,
+  .slide__panel {
+    border: 1px solid ButtonText;
+  }
+
+  .pill-nav a.is-active {
+    outline: 2px solid Highlight;
+  }
+
+  .solutions__progress i,
+  .route-card__bar i {
+    background: Highlight;
+  }
+
+  .process__dot {
+    border-color: CanvasText;
+    forced-color-adjust: none;
+  }
+}

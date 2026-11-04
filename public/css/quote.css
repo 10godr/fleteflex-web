@@ -1,0 +1,208 @@
+.quote__grid {
+  display: grid;
+  gap: clamp(32px, 5vw, 80px);
+}
+
+.quote__title {
+  margin-bottom: 20px;
+  font-size: var(--fs-h2);
+}
+
+.quote__intro {
+  max-width: 32rem;
+  font-size: var(--fs-lead);
+  color: var(--fg-muted);
+}
+
+.quote__note {
+  max-width: 32rem;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+/* Formulario en una sola pantalla */
+.quote-form {
+  display: grid;
+  gap: 18px;
+  padding: clamp(20px, 3.2vw, 40px);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--bg-alt);
+}
+
+.quote-form__row {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.field label small {
+  font-weight: 400;
+  color: var(--fg-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  /* Al enfocar un campo con error, el navegador lo deja visible por debajo del header */
+  scroll-margin-top: calc(var(--header-h) + 32px);
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid #aab6c4;
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--ink-900);
+  font: inherit;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.field textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #667282;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--ink-900);
+  box-shadow: 0 0 0 3px rgb(7 25 48 / 0.16);
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+  border-color: #a62621;
+}
+
+.field__error {
+  min-height: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #a62621;
+}
+
+.field[hidden] {
+  display: none;
+}
+
+.quote-form__submit {
+  display: grid;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.quote-form__submit .btn {
+  gap: 10px;
+  min-height: 54px;
+}
+
+.quote-form__submit svg {
+  width: 22px;
+  height: 22px;
+}
+
+.quote-form__hint {
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+}
+
+/* Resultado: aparece al abrir WhatsApp, con enlace por si el navegador bloqueó la ventana */
+.quote-form__status {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: #eaf5d4;
+  color: var(--ink-900);
+  font-size: 0.9375rem;
+}
+
+.quote-form__status a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .quote-form__row--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .quote__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+  }
+
+  .quote__lead {
+    position: sticky;
+    top: calc(var(--header-h) + 32px);
+  }
+}
+
+/*
+ * Feedback de acciones: animaciones cortas que explican qué pasó. La alternativa de
+ * movimiento reducido está en reduced-motion.css.
+ */
+.field.has-error .field__error {
+  animation: field-error-in 220ms var(--ease-out);
+}
+
+.quote-form__status {
+  animation: status-in 320ms var(--ease-out);
+}
+
+/* Anillo que se apaga en el campo preseleccionado; arranca cuando el scroll ya llegó (~0.9 s) */
+.is-prefilled :is(input, select) {
+  animation: field-prefilled 1200ms var(--ease-out) 900ms;
+}
+
+@keyframes field-error-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes status-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes field-prefilled {
+  0% {
+    border-color: var(--ink-900);
+    box-shadow: 0 0 0 0 rgb(7 25 48 / 0.38);
+  }
+
+  35% {
+    border-color: var(--ink-900);
+    box-shadow: 0 0 0 6px rgb(7 25 48 / 0.16);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(7 25 48 / 0);
+  }
+}

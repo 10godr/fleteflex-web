@@ -1,0 +1,122 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--primary {
+  background: var(--green);
+  color: var(--ink-900);
+}
+
+.btn--light {
+  background: var(--white);
+  color: var(--ink-900);
+}
+
+.btn--dark {
+  background: var(--ink-900);
+  color: var(--white);
+}
+
+.btn--ghost {
+  border-color: rgb(255 255 255 / 0.4);
+  color: var(--white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover {
+    background: var(--green-hover);
+  }
+
+  .btn--light:hover {
+    background: var(--green-soft);
+  }
+
+  .btn--dark:hover {
+    background: var(--green);
+    color: var(--ink-900);
+  }
+
+  .btn--ghost:hover {
+    border-color: var(--white);
+    background: rgb(255 255 255 / 0.1);
+  }
+}
+
+/*
+ * Variante brutalista (solo hero): esquinas rectas, borde grueso y sombra dura.
+ * Al presionar el botón "baja" hasta tapar su sombra, como una tecla física.
+ */
+.btn--brutal {
+  --shadow: var(--white);
+  min-height: 54px;
+  padding: 0 28px;
+  border: 2px solid var(--ink-950);
+  border-radius: 0;
+  box-shadow: 5px 5px 0 var(--shadow);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition:
+    transform 140ms var(--ease-out),
+    box-shadow 140ms var(--ease-out),
+    background-color 200ms ease;
+}
+
+.btn--ghost.btn--brutal {
+  --shadow: var(--blue);
+  border-color: var(--white);
+  background: rgb(4 13 27 / 0.4);
+}
+
+.btn--brutal:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0 var(--shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--brutal:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--shadow);
+  }
+
+  .btn--ghost.btn--brutal:hover {
+    background: rgb(4 13 27 / 0.7);
+  }
+}
+
+/* Enlace de texto con subrayado de acento */
+.link-text {
+  display: inline-block;
+  padding-block: 6px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color 200ms ease, color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link-text:hover {
+    color: var(--accent-text);
+  }
+}

@@ -1,0 +1,41 @@
+/*
+ * Velo de marca (telón azul con el logo): SOLO se usa al cambiar de solución en el slider de
+ * servicios (solutions.js). En reposo está recogido y no se ve; ninguna imagen lo usa al cargar
+ * la página ni al aparecer.
+ */
+.curtain {
+  position: relative;
+  overflow: hidden;
+}
+
+.curtain__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  background: var(--ink-900);
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+}
+
+.curtain__logo {
+  width: clamp(140px, 38%, 360px);
+  height: auto;
+}
+
+/*
+ * Sin parpadeo de la entrada: el hero y el header se ocultan hasta que main.js termina de
+ * preparar la animación (clase is-ready). Si el script fallara, un temporizador CSS los muestra.
+ */
+.js:not(.is-ready) .hero__inner,
+.js:not(.is-ready) .site-header__inner {
+  visibility: hidden;
+  animation: reveal-failsafe 0.01s linear 3s forwards;
+}
+
+@keyframes reveal-failsafe {
+  to {
+    visibility: visible;
+  }
+}

@@ -1,0 +1,34 @@
+/* Estructura común de las secciones claras */
+.section {
+  padding-block: clamp(64px, 7.5vw, 112px);
+  background: var(--bg);
+}
+
+.section--alt {
+  background: var(--bg-alt);
+}
+
+/* Cabecera de sección: titular grande a la izquierda y texto de apoyo a la derecha (como la referencia) */
+.split-head {
+  display: grid;
+  gap: 20px;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.split-head h2 {
+  font-size: var(--fs-h2);
+}
+
+.split-head p {
+  max-width: 34rem;
+  font-size: var(--fs-lead);
+  color: var(--fg-muted);
+}
+
+@media (min-width: 900px) {
+  .split-head {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    align-items: end;
+    gap: 48px;
+  }
+}

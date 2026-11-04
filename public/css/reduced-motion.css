@@ -1,0 +1,71 @@
+/*
+ * Movimiento reducido: menos y más suave, no cero. Se conservan los cambios de color y los fundidos
+ * que ayudan a entender (estado del menú, errores, avisos); se quitan los desplazamientos, barridos
+ * y deslizamientos. Las animaciones de GSAP ya no corren en este modo (main.js).
+ * Debe cargarse al final para ganar a las reglas de cada componente.
+ */
+@keyframes fade-only {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Menú móvil: aparece con un fundido en lugar de barrer la pantalla */
+  .menu {
+    clip-path: none;
+    opacity: 0;
+    transition:
+      opacity 200ms ease,
+      visibility 0s linear 200ms;
+  }
+
+  .menu.is-open {
+    opacity: 1;
+    transition:
+      opacity 200ms ease,
+      visibility 0s;
+  }
+
+  .menu__links li,
+  .menu__foot,
+  .menu.is-open .menu__links li,
+  .menu.is-open .menu__foot {
+    transform: none;
+    transition-delay: 0s;
+    transition-property: opacity;
+  }
+
+  /* El chip de la navegación cambia de sitio sin deslizarse; el botón de WhatsApp sin subir */
+  .pill-nav__chip {
+    transition: opacity 200ms ease;
+  }
+
+  .wa-float {
+    transform: none;
+    transition: opacity 200ms ease;
+  }
+
+  /* Preguntas frecuentes y formulario: solo fundido */
+  .faq__item[open] p,
+  .field.has-error .field__error,
+  .quote-form__status {
+    animation-name: fade-only;
+  }
+
+  .faq__item summary svg,
+  .solutions__progress i {
+    transition: none;
+  }
+
+  /* La preselección se resalta de inmediato: el scroll ya no es animado */
+  .is-prefilled :is(input, select) {
+    animation-delay: 0s;
+  }
+
+  /* Sin desplazamientos al pasar el mouse */
+  .btn--brutal:hover,
+  .route-card:hover {
+    transform: none;
+  }
+}

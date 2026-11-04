@@ -1,0 +1,230 @@
+/* Las secciones siguientes se deslizan sobre el hero (que queda fijo, ver hero.js) */
+main > section:not(.hero) {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  overflow: clip;
+  background: var(--ink-950);
+}
+
+/* Más alto por arriba: el parallax baja la foto sin dejar un hueco en el borde superior */
+.hero__media {
+  position: absolute;
+  inset: -14% 0 0 0;
+  z-index: -3;
+  overflow: hidden;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* El buque está en el tercio inferior derecho de la foto: se encuadra ahí en ancho y en vertical */
+  object-position: 64% 66%;
+}
+
+/* Degradados estáticos para dar contraste al texto sobre la foto */
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgb(4 13 27 / 0.82) 0%, rgb(4 13 27 / 0.5) 42%, transparent 74%),
+    linear-gradient(0deg, rgb(4 13 27 / 0.78) 0%, transparent 42%),
+    linear-gradient(180deg, rgb(4 13 27 / 0.62) 0%, transparent 28%);
+}
+
+/* Velo que oscurece el hero con el scroll hasta el color de la sección siguiente */
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ink-950);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: clamp(32px, 6vh, 64px);
+  min-height: 100dvh;
+  padding-top: calc(var(--header-h) + clamp(16px, 5vh, 56px));
+  padding-bottom: max(clamp(24px, 5vh, 56px), env(safe-area-inset-bottom));
+}
+
+/*
+ * Titular grande y brutalista: peso 800, mayúsculas, interlineado apretado y
+ * sombra dura (sin desenfoque) que lo "extruye". Primera frase en azul, segunda en verde.
+ * El tamaño sigue al ancho y al alto de la ventana para que el hero siempre quepa.
+ */
+.hero__title {
+  max-width: 8.6em;
+  font-size: clamp(2.9rem, min(6.4vw, 13vh), 7rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-wrap: pretty;
+  text-shadow: 0.045em 0.045em 0 var(--ink-950);
+}
+
+.hero__title em {
+  font-weight: 800;
+}
+
+.t-blue {
+  color: var(--blue);
+}
+
+.t-green {
+  color: var(--green);
+}
+
+.hero__foot {
+  display: grid;
+  align-items: end;
+  gap: 32px;
+}
+
+.hero__lead {
+  max-width: 38rem;
+  font-size: clamp(1.0625rem, 1rem + 0.45vw, 1.375rem);
+  line-height: 1.5;
+  color: rgb(255 255 255 / 0.96);
+  /* Refuerzo de legibilidad cuando el texto cruza el barco (móvil) */
+  text-shadow: 0 1px 14px rgb(4 13 27 / 0.75);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* Tarjeta rotativa de orígenes de la red (misma lengua brutalista que el titular) */
+.route-card {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 340px);
+  padding: 16px 18px 14px;
+  border: 2px solid var(--white);
+  border-radius: 0;
+  background: rgb(4 13 27 / 0.94);
+  box-shadow: 6px 6px 0 var(--green);
+  transition:
+    transform 140ms var(--ease-out),
+    box-shadow 140ms var(--ease-out);
+}
+
+.route-card:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--green);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .route-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--green);
+  }
+}
+
+.route-card__label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.route-card__origin {
+  display: block;
+  overflow: hidden;
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.route-card__origin > span {
+  display: block;
+}
+
+.route-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.route-card__bar {
+  flex: 1;
+  height: 4px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.2);
+}
+
+.route-card__bar i {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media (min-width: 820px) {
+  .hero__foot {
+    grid-template-columns: minmax(0, 36rem) auto;
+    justify-content: space-between;
+  }
+}
+
+/* Celulares: tamaño proporcional al ancho para que la palabra más larga ("CONECTAMOS") quepa desde 320 px */
+@media (max-width: 599px) {
+  .hero__title {
+    font-size: clamp(2rem, 11.2vw, 3.4rem);
+  }
+}
+
+/*
+ * Pantallas bajas (celular en horizontal): el hero entero debe caber en la altura de la ventana, con los
+ * botones a la vista. Se compacta el titular y el espaciado, y se omite la tarjeta de orígenes.
+ */
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero__inner {
+    gap: 12px;
+    padding-top: calc(var(--header-h) + 8px);
+    padding-bottom: 14px;
+  }
+
+  .hero__title {
+    max-width: 16em;
+    font-size: clamp(1.7rem, 9.5vh, 3.2rem);
+  }
+
+  .hero__lead {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  .hero__actions {
+    margin-top: 12px;
+  }
+
+  .route-card {
+    display: none;
+  }
+}
+
+/* La foto vertical de celular ya viene recortada con el barco al centro */
+@media (max-width: 767px) {
+  .hero__media img {
+    object-position: 50% 60%;
+  }
+}

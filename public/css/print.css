@@ -1,0 +1,103 @@
+/*
+ * Impresión / PDF. La página se anima con estilos en línea (opacidad, transformaciones, recortes), así que
+ * sin esto una página impresa antes de recorrerla saldría con textos invisibles y el hero cortado.
+ * Se cargan solo con media="print".
+ */
+@page {
+  margin: 14mm;
+}
+
+*,
+*::before,
+*::after {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Lo que no sirve en papel */
+.site-header,
+.menu,
+.wa-float,
+.skip-link,
+.hero__media,
+.hero__shade,
+.hero__veil,
+.route-card,
+.curtain__veil,
+.solutions__controls,
+.network__hint,
+.site-footer__logo {
+  display: none !important;
+}
+
+/* El hero fijado por ScrollTrigger vuelve al flujo normal */
+.pin-spacer {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+.hero {
+  position: static !important;
+  min-height: 0 !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.hero__inner {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+}
+
+.hero__title,
+.hero__title .t-blue,
+.hero__title .t-green,
+.hero__lead {
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+/* Las secciones oscuras (pie) pasan a tinta sobre blanco */
+.theme-dark {
+  --bg: #fff;
+  --bg-alt: #fff;
+  --fg: #000;
+  --fg-muted: #333;
+  --rule: #999;
+  --text: #000;
+  --text-muted: #333;
+}
+
+.site-footer {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Los botones de color pasan a contorno */
+.btn,
+.btn--dark,
+.btn--primary,
+.btn--ghost {
+  background: none !important;
+  color: #000 !important;
+  border: 1px solid #000 !important;
+  box-shadow: none !important;
+}
+
+.section,
+.solutions,
+.about {
+  padding-block: 12mm !important;
+  background: #fff !important;
+}
+
+.slide,
+.faq__item,
+.stat,
+.process__step {
+  break-inside: avoid;
+}

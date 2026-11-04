@@ -1,0 +1,80 @@
+.network__origins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 clamp(28px, 4vw, 48px);
+  padding: 0;
+  list-style: none;
+}
+
+.network__origins a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid rgb(7 25 48 / 0.3);
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.network__origins a:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .network__origins a:hover {
+    border-color: var(--ink-900);
+    background: var(--ink-900);
+    color: var(--white);
+  }
+}
+
+.network__map {
+  overflow: hidden;
+  max-width: 1080px;
+  margin: 0 auto;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+}
+
+/* En pantallas angostas el mapa conserva un ancho legible y se desplaza en horizontal */
+.network__scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.network__scroll img {
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+}
+
+@media (min-width: 800px) {
+  /* Con ancho suficiente no hay desplazamiento (y el zoom de la cortina no genera barra) */
+  .network__scroll {
+    overflow: hidden;
+  }
+
+  .network__scroll img {
+    min-width: 0;
+  }
+}
+
+/* Pista visible solo cuando el mapa se desplaza en horizontal (pantallas angostas) */
+.network__hint {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+@media (min-width: 800px) {
+  .network__hint {
+    display: none;
+  }
+}

@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#040d1b">
+  <meta name="color-scheme" content="light">
+  <title>Flexocean | Logística internacional</title>
+  <meta name="description" content="Flete marítimo y aéreo, gestión aduanal y soluciones logísticas. Cotiza tu próximo envío con Flexocean, FleteFlex y Oceanair Logistics.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="preload" href="fonts/hanken-grotesk-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/hanken-grotesk-italic.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/about.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/solutions.css" media="print" onload="this.media='all'">
+  <!-- Hojas de las secciones de abajo: se cargan sin bloquear el primer pintado (media="print" y se activan al cargar). -->
+  <link rel="stylesheet" href="css/layout.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/journey.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/process.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/quote.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/network.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/enterprise.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/faq.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/contact.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/footer.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/touch.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/resilience.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <noscript>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/solutions.css">
+    <link rel="stylesheet" href="css/journey.css">
+    <link rel="stylesheet" href="css/process.css">
+    <link rel="stylesheet" href="css/quote.css">
+    <link rel="stylesheet" href="css/network.css">
+    <link rel="stylesheet" href="css/enterprise.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/touch.css">
+    <link rel="stylesheet" href="css/resilience.css">
+    <link rel="stylesheet" href="css/reduced-motion.css">
+  </noscript>
+  <link rel="stylesheet" href="css/reduced-motion.css" media="print" onload="this.media='all'">
+
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="vendor/SplitText.min.js"></script>
+  <script defer src="vendor/lenis.min.js"></script>
+  <!-- Módulos precargados en paralelo; si se agrega un módulo, sumarlo aquí (si falta, solo pierde esta mejora) -->
+  <link rel="modulepreload" href="js/main.js">
+  <link rel="modulepreload" href="js/core/assets.js">
+  <link rel="modulepreload" href="js/core/env.js">
+  <link rel="modulepreload" href="js/core/gsap.js">
+  <link rel="modulepreload" href="js/core/scroll.js">
+  <link rel="modulepreload" href="js/data/origins.js">
+  <link rel="modulepreload" href="js/data/quote.js">
+  <link rel="modulepreload" href="js/data/solutions.js">
+  <link rel="modulepreload" href="js/modules/counters.js">
+  <link rel="modulepreload" href="js/modules/header-theme.js">
+  <link rel="modulepreload" href="js/modules/hero.js">
+  <link rel="modulepreload" href="js/modules/nav.js">
+  <link rel="modulepreload" href="js/modules/process.js">
+  <link rel="modulepreload" href="js/modules/quote-form.js">
+  <link rel="modulepreload" href="js/modules/quote-message.js">
+  <link rel="modulepreload" href="js/modules/quote-sanitize.js">
+  <link rel="modulepreload" href="js/modules/quote-validate.js">
+  <link rel="modulepreload" href="js/modules/reveal.js">
+  <link rel="modulepreload" href="js/modules/route-card.js">
+  <link rel="modulepreload" href="js/modules/solutions-render.js">
+  <link rel="modulepreload" href="js/modules/solutions.js">
+  <link rel="modulepreload" href="js/modules/text-reveal.js">
+  <link rel="modulepreload" href="js/modules/veil.js">
+  <link rel="modulepreload" href="js/modules/whatsapp-float.js">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" data-theme="dark">
+    <div class="site-header__inner">
+      <a class="brand" href="#inicio" aria-label="FleteFlex Logistics y Oceanair Logistics, ir al inicio">
+        <img class="brand__img--white" src="images/logo-blanco-600.webp" width="600" height="100" alt="FleteFlex Logistics y Oceanair Logistics">
+        <img class="brand__img--color" src="images/logo-600.webp" width="600" height="100" alt="" aria-hidden="true">
+      </a>
+
+      <nav class="pill-nav" aria-label="Principal">
+        <span class="pill-nav__chip" aria-hidden="true"></span>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#origenes">Orígenes</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="btn btn--light header-cta" href="#cotizar">Cotizar envío</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <svg class="icon-open" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+        <svg class="icon-close" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+        <span class="menu-toggle__label">Menú</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu theme-dark" id="menu" aria-label="Menú de navegación" inert>
+    <ul class="menu__links">
+      <li style="--i:0"><a href="#nosotros">Nosotros</a></li>
+      <li style="--i:1"><a href="#servicios">Servicios</a></li>
+      <li style="--i:2"><a href="#origenes">Orígenes</a></li>
+      <li style="--i:3"><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="menu__foot">
+      <a class="btn btn--primary" href="#cotizar">Cotizar envío</a>
+      <div class="menu__contact">
+        <a href="mailto:info@fleteflex.com">info@fleteflex.com</a>
+        <a href="tel:+18299561246">829-956-1246</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="contenido">
+    <section class="hero theme-dark" id="inicio" aria-labelledby="hero-title" data-header-theme="dark">
+      <div class="hero__media">
+        <picture>
+          <source media="(max-width: 767px)"
+                  srcset="images/hero-movil-780.webp 780w, images/hero-movil-1170.webp 1170w" sizes="100vw">
+          <img src="images/hero-1400.webp"
+               srcset="images/hero-900.webp 900w, images/hero-1400.webp 1400w, images/hero.webp 1920w"
+               sizes="100vw" width="1920" height="1245" fetchpriority="high"
+               alt="Buque portacontenedores navegando en una bahía, visto desde el aire">
+        </picture>
+      </div>
+      <div class="hero__shade"></div>
+      <div class="hero__veil"></div>
+
+      <div class="hero__inner container">
+        <h1 class="hero__title display-h" id="hero-title"><span class="t-blue">Conectamos tu carga,</span> <span class="t-green"><em>impulsamos</em> tu mundo.</span></h1>
+
+        <div class="hero__foot">
+          <div class="hero__copy">
+            <p class="hero__lead">Comercio internacional, flete, aduanas y distribución. Una solución integral para cada etapa de tu cadena de suministro.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--brutal" href="#cotizar">Cotizar envío</a>
+              <a class="btn btn--ghost btn--brutal" href="#servicios">Explorar servicios</a>
+            </div>
+          </div>
+
+          <a class="route-card" href="#cotizar" data-route-card>
+            <span class="route-card__label">Cotiza desde nuestra red</span>
+            <span class="route-card__origin" aria-hidden="true"><span data-route-origin>Estados Unidos</span></span>
+            <span class="route-card__meta">
+              <span class="route-card__bar" aria-hidden="true"><i data-route-bar></i></span>
+              <span data-route-count aria-hidden="true">1 / 7</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="nosotros" aria-labelledby="about-title" data-header-theme="light">
+      <div class="container about__grid">
+        <figure class="about__media">
+          <img src="images/identidad.webp" srcset="images/identidad-480.webp 480w, images/identidad.webp 700w" sizes="(min-width: 900px) 40vw, 100vw" width="700" height="875" loading="lazy"
+               alt="Proa de un buque portacontenedores cargado, navegando junto al puerto">
+        </figure>
+
+        <div class="about__body">
+          <h2 class="about__title display-h" id="about-title" data-lines><span class="keep">Dos marcas.</span> <span class="keep">Un mismo <em>destino.</em></span></h2>
+          <p>Flexocean reúne a FleteFlex y Oceanair Logistics en una asociación de empresas dedicada a soluciones integrales de comercio internacional y logística. Conectamos mercados y coordinamos las etapas de tu cadena de suministro con eficiencia, seguridad y transparencia.</p>
+          <p>Desde Santo Domingo Este, acompañamos tu operación antes, durante y después del envío: compras internacionales, transporte, aduanas, almacenamiento y distribución. Nuestro enfoque combina conocimiento, planificación, precisión y atención personalizada.</p>
+          <a class="link-text" href="#contacto">Conoce nuestros datos de contacto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions" id="servicios" aria-labelledby="solutions-title" data-header-theme="light" data-solutions>
+      <div class="container">
+        <div class="solutions__head">
+          <h2 class="solutions__title display-h" id="solutions-title"><span class="keep">Tu operación.</span> <span class="keep">Nuestras <em>soluciones.</em></span></h2>
+          <p class="solutions__intro">Desde una carga consolidada hasta una operación especializada. Encuentra el servicio que se ajusta a tu envío.</p>
+        </div>
+
+        <div class="solutions__controls">
+          <div class="solutions__progress" aria-hidden="true"><i data-solutions-progress></i></div>
+          <span class="solutions__count" data-solutions-count aria-hidden="true">1 / 8</span>
+          <div class="solutions__arrows">
+            <button class="arrow-btn" type="button" data-solutions-prev aria-label="Solución anterior">
+              <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg>
+            </button>
+            <button class="arrow-btn" type="button" data-solutions-next aria-label="Solución siguiente">
+              <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="noscript-note">Para ver las soluciones necesitas activar JavaScript. También puedes <a href="#contacto">escribirnos o llamarnos</a> y te contamos qué servicio se ajusta a tu envío.</p>
+        </noscript>
+        <div class="solutions__stage" data-solutions-stage></div>
+        <p class="visually-hidden" role="status" data-solutions-status></p>
+
+      </div>
+    </section>
+
+    <section class="journey section" id="transporte" aria-labelledby="journey-title" data-header-theme="light">
+      <div class="container journey__grid">
+        <div class="journey__body">
+          <h2 class="journey__title display-h" id="journey-title">Cada carga merece una <em>solución</em> a su medida.</h2>
+          <dl class="journey__facts">
+            <div>
+              <dt>Transporte internacional</dt>
+              <dd>Marítimo, aéreo y terrestre.</dd>
+            </div>
+            <div>
+              <dt>Coordinación integral</dt>
+              <dd>Mercancía, documentación y destino.</dd>
+            </div>
+          </dl>
+          <a class="btn btn--dark" href="#cotizar">Cotizar envío</a>
+        </div>
+
+        <div class="journey__visual">
+          <figure class="journey__photo">
+            <img src="images/soluciones/journey-camion.webp" srcset="images/soluciones/journey-camion-640.webp 640w, images/soluciones/journey-camion.webp 960w" sizes="(min-width: 900px) 40vw, 100vw" width="960" height="836" loading="lazy"
+                 alt="Camión de carga circulando por una carretera">
+          </figure>
+          <ul class="journey__stats">
+            <li class="stat"><b data-count="origins">7</b><span>países de origen en nuestra red</span></li>
+            <li class="stat stat--ink"><b data-count="services">38</b><span>servicios para tu operación</span></li>
+            <li class="stat stat--green"><b data-count="modalities">3</b><span>modalidades de transporte</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section section--alt" id="como-empezamos" aria-labelledby="process-title" data-header-theme="light">
+      <div class="container">
+        <div class="split-head">
+          <h2 class="display-h" id="process-title">Claridad en cada <em>paso.</em></h2>
+          <p>Una buena coordinación comienza por conocer tu operación.</p>
+        </div>
+
+        <ol class="process__track" data-process>
+          <li class="process__step">
+            <span class="process__dot" aria-hidden="true"></span>
+            <span class="process__verb">Cuéntanos</span>
+            <h3>Tu ruta y tu carga</h3>
+            <p>Indica qué vas a enviar, desde dónde y hacia qué destino.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__dot" aria-hidden="true"></span>
+            <span class="process__verb">Coordinamos</span>
+            <h3>La solución adecuada</h3>
+            <p>Solicita una revisión de modalidad, documentación y necesidades especiales.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__dot" aria-hidden="true"></span>
+            <span class="process__verb">Planificamos</span>
+            <h3>El siguiente movimiento</h3>
+            <p>Confirma las condiciones de tu propuesta antes de iniciar la operación.</p>
+          </li>
+        </ol>
+
+        <a class="btn btn--dark" href="#cotizar">Cotizar envío</a>
+      </div>
+    </section>
+
+    <section class="quote section" id="cotizar" data-hide-wa-float aria-labelledby="quote-title" data-header-theme="light">
+      <div class="container quote__grid">
+        <div class="quote__lead">
+          <h2 class="quote__title display-h" id="quote-title" data-lines>El próximo destino empieza <em>aquí.</em></h2>
+          <p class="quote__intro">Prepara tu solicitud en un solo paso. Nuestro equipo comercial podrá revisar los detalles de tu envío.</p>
+          <p class="quote__note">Cada operación es distinta. La tarifa se confirma después de revisar la ruta, el peso, las dimensiones y la mercancía.</p>
+        </div>
+
+        <noscript>
+          <p class="noscript-note">Para usar este formulario necesitas activar JavaScript. Mientras tanto, escríbenos por <a href="https://wa.me/18299561246?text=Hola%2C%20quiero%20consultar%20sobre%20un%20servicio%20de%20Flexocean." rel="noopener">WhatsApp</a> o llama al <a href="tel:+18299561246">829-956-1246</a>.</p>
+        </noscript>
+
+        <form class="quote-form" id="quote-form" novalidate>
+          <div class="field">
+            <label for="service">¿Qué servicio necesitas?</label>
+            <select id="service" name="service" aria-required="true" aria-describedby="service-error">
+              <option value="">Selecciona un servicio</option>
+            </select>
+            <span class="field__error" id="service-error" aria-live="polite"></span>
+          </div>
+
+          <div class="quote-form__row quote-form__row--2">
+            <div class="field">
+              <label for="origin" data-cargo="País / ciudad de origen" data-advisory="País de la operación <small>(opcional)</small>">País / ciudad de origen</label>
+              <input id="origin" name="origin" type="text" list="origin-list" autocomplete="off" maxlength="60" aria-required="true" placeholder="Ej. China" aria-describedby="origin-error">
+              <datalist id="origin-list"></datalist>
+              <span class="field__error" id="origin-error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="destination" data-cargo="Destino" data-advisory="Destino <small>(opcional)</small>">Destino</label>
+              <input id="destination" name="destination" type="text" autocomplete="off" maxlength="60" aria-required="true" placeholder="Ej. Santo Domingo" aria-describedby="destination-error">
+              <span class="field__error" id="destination-error" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="quote-form__row quote-form__row--2" data-cargo-only>
+            <div class="field">
+              <label for="weight">Peso estimado (kg)</label>
+              <input id="weight" name="weight" type="number" inputmode="decimal" min="0" max="9999999" step="any" aria-required="true" placeholder="Ej. 450" aria-describedby="weight-error">
+              <span class="field__error" id="weight-error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="pieces">Cantidad de bultos</label>
+              <input id="pieces" name="pieces" type="number" inputmode="numeric" min="1" max="99999" step="1" aria-required="true" placeholder="Ej. 12" aria-describedby="pieces-error">
+              <span class="field__error" id="pieces-error" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="description" data-cargo="Descripción de la mercancía" data-advisory="Describe el servicio que necesitas">Descripción de la mercancía</label>
+            <textarea id="description" name="description" rows="3" maxlength="600" aria-required="true" aria-describedby="description-error"></textarea>
+            <span class="field__error" id="description-error" aria-live="polite"></span>
+          </div>
+
+          <div class="quote-form__row quote-form__row--2">
+            <div class="field">
+              <label for="name">Nombre o empresa</label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" aria-required="true" aria-describedby="name-error">
+              <span class="field__error" id="name-error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico <small>(opcional)</small></label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" aria-describedby="email-error">
+              <span class="field__error" id="email-error" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="quote-form__submit">
+            <button class="btn btn--primary" type="submit">
+              <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg>
+              Continuar en WhatsApp
+            </button>
+            <p class="quote-form__status" data-quote-status role="status" hidden></p>
+            <p class="quote-form__hint">Se abrirá WhatsApp con tu solicitud ya escrita; solo falta que pulses Enviar. Tus datos se usarán solo para atender esta consulta.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="network section section--alt" id="origenes" aria-labelledby="network-title" data-header-theme="light">
+      <div class="container">
+        <div class="split-head">
+          <h2 class="display-h" id="network-title">Conectamos mercados. <em>Acercamos destinos.</em></h2>
+          <p>Consulta una operación desde los orígenes de nuestra red. La modalidad y las condiciones se revisan según tu carga y destino.</p>
+        </div>
+
+        <ul class="network__origins">
+          <li><a href="#cotizar" data-origin="Estados Unidos" aria-label="Cotizar un envío desde Estados Unidos">Estados Unidos</a></li>
+          <li><a href="#cotizar" data-origin="Panamá" aria-label="Cotizar un envío desde Panamá">Panamá</a></li>
+          <li><a href="#cotizar" data-origin="Colombia" aria-label="Cotizar un envío desde Colombia">Colombia</a></li>
+          <li><a href="#cotizar" data-origin="España" aria-label="Cotizar un envío desde España">España</a></li>
+          <li><a href="#cotizar" data-origin="Italia" aria-label="Cotizar un envío desde Italia">Italia</a></li>
+          <li><a href="#cotizar" data-origin="China" aria-label="Cotizar un envío desde China">China</a></li>
+          <li><a href="#cotizar" data-origin="República Dominicana" aria-label="Cotizar un envío desde República Dominicana">República Dominicana</a></li>
+        </ul>
+
+        <p class="network__hint" id="map-hint">Desliza hacia los lados para ver el mapa completo.</p>
+
+        <figure class="network__map">
+          <div class="network__scroll" tabindex="0" role="region" aria-label="Mapa de la red internacional">
+            <img src="images/red-mapa.webp" width="1600" height="779" loading="lazy"
+                 alt="Mapa de la red internacional: Estados Unidos, Panamá, Colombia, República Dominicana, España, Italia y China">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="enterprise section" id="empresas" aria-labelledby="enterprise-title" data-header-theme="light">
+      <div class="container enterprise__grid">
+        <div class="enterprise__lead">
+          <h2 class="enterprise__title display-h" id="enterprise-title">Una visión integral <em>de tu operación.</em></h2>
+          <p>Desde la administración de importaciones hasta el diseño de rutas, acompañamos la planificación y la coordinación de tu cadena logística.</p>
+          <a class="btn btn--dark" href="#cotizar" data-service="Consultoría en Comercio Exterior">Solicitar asesoría</a>
+        </div>
+        <ul class="enterprise__list">
+          <li>Administración integral de importaciones</li>
+          <li>Outsourcing del departamento de importaciones</li>
+          <li>Optimización de costos logísticos</li>
+          <li>Diseño de rutas logísticas</li>
+          <li>Auditoría logística</li>
+          <li>Consultoría estratégica</li>
+          <li>Gestión de proyectos especiales</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="faq section section--alt" id="preguntas" aria-labelledby="faq-title" data-header-theme="light">
+      <div class="container">
+        <div class="split-head">
+          <h2 class="display-h" id="faq-title">Antes de enviar <em>tu carga.</em></h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item" name="faq">
+            <summary>¿Qué información necesito para cotizar?<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary>
+            <p>Origen, destino, servicio requerido, tipo de mercancía, peso y cantidad de bultos. Las dimensiones, el volumen y la fecha deseada ayudan a preparar una propuesta más precisa.</p>
+          </details>
+          <details class="faq__item" name="faq">
+            <summary>¿Cuál es la diferencia entre FCL y LCL?<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary>
+            <p>FCL corresponde al uso de un contenedor completo. LCL permite compartir espacio con otras cargas. La elección depende del volumen y las necesidades de tu envío.</p>
+          </details>
+          <details class="faq__item" name="faq">
+            <summary>¿Los impuestos y aduanas están incluidos?<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary>
+            <p>La propuesta final debe detallar el transporte, los servicios y los cargos incluidos. Los impuestos, permisos y costos aduanales se revisan según cada operación.</p>
+          </details>
+          <details class="faq__item" name="faq">
+            <summary>¿Cómo envío mi solicitud de cotización?<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></summary>
+            <p>Completa el formulario y pulsa Continuar en WhatsApp. Se abrirá un mensaje con los datos de tu solicitud para que lo revises y lo envíes tú.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contacto" data-hide-wa-float aria-labelledby="contact-title" data-header-theme="light">
+      <div class="container contact__grid">
+        <div>
+          <h2 class="contact__title display-h" id="contact-title">Tu siguiente movimiento, <em>conectado.</em></h2>
+          <ul class="contact__lines">
+            <li><a href="mailto:info@fleteflex.com">info@fleteflex.com</a></li>
+            <li><span>Atención comercial</span><a href="tel:+18299561246">829-956-1246</a></li>
+          </ul>
+          <a class="btn btn--primary" href="https://wa.me/18299561246?text=Hola%2C%20quiero%20consultar%20sobre%20un%20servicio%20de%20Flexocean." target="_blank" rel="noopener">
+            <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+
+        <div class="contact__place">
+          <h3>Visítanos en Santo Domingo Este</h3>
+          <address>Av. Guayubín Olivo, calle Colibrí #2,<br>Local 7-A, Vista Hermosa,<br>Santo Domingo Este.</address>
+          <a class="link-text" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Guayubin%20Olivo%2C%20calle%20Colibri%202%2C%20Vista%20Hermosa%2C%20Santo%20Domingo%20Este" target="_blank" rel="noopener">Buscar dirección en Maps</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer theme-dark" data-header-theme="dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="site-footer__home" href="#inicio" aria-label="FleteFlex Logistics y Oceanair Logistics, ir al inicio">
+            <img class="site-footer__logo" src="images/logo-blanco-600.webp" width="600" height="100" alt="FleteFlex Logistics y Oceanair Logistics" loading="lazy">
+          </a>
+          <p class="site-footer__tagline">Conectamos tu carga, impulsamos tu mundo.</p>
+        </div>
+        <nav aria-label="Secciones">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#origenes">Orígenes</a>
+          <a href="#cotizar">Cotizar envío</a>
+        </nav>
+        <div class="site-footer__contact">
+          <a href="tel:+18299561246">829-956-1246</a>
+          <a href="mailto:info@fleteflex.com">info@fleteflex.com</a>
+        </div>
+      </div>
+      <p class="site-footer__legal">© 2026 Flexocean</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/18299561246?text=Hola%2C%20quiero%20consultar%20sobre%20un%20servicio%20de%20Flexocean." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</body>
+</html>

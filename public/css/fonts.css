@@ -1,0 +1,16 @@
+/* Hanken Grotesk (variable, subconjunto latin: cubre á é í ó ú ñ ¿ ¡). Alojada localmente. */
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/hanken-grotesk-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/hanken-grotesk-italic.woff2") format("woff2");
+}

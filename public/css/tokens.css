@@ -1,0 +1,76 @@
+/*
+ * Tokens de diseño FleteFlex.
+ * Paleta: la del sitio actual (tinta #071930 + verde #86bc25). El fondo oscuro es
+ * una variante más profunda de la tinta de marca; el verde es el único acento.
+ */
+:root {
+  /* Color */
+  --ink-950: #040d1b;
+  --ink-900: #071930;
+  --ink-800: #0c2342;
+  --ink-600: #344255;
+  --slate-500: #667282;
+  --line: #dce2e8;
+  --paper: #f4f6f8;
+  --white: #ffffff;
+
+  /* Azul del logo (tono 210°, #003060) aclarado para leerse sobre fondos oscuros */
+  --blue: #4da3ff;
+
+  --green: #86bc25;
+  --green-hover: #96cd34;
+  --green-soft: #a8d855;
+  --green-deep: #185d38;
+
+  --text: #f3f6fa;
+  --text-muted: #b4c1d1;
+  --line-dark: rgb(255 255 255 / 0.14);
+  --glass: rgb(4 13 27 / 0.52);
+
+  /* Tema por defecto: claro (como el sitio original). .theme-dark lo invierte por sección. */
+  --bg: var(--white);
+  --bg-alt: var(--paper);
+  --fg: var(--ink-900);
+  --fg-muted: #586475;
+  --rule: var(--line);
+  --focus: var(--ink-900);
+  --accent-text: var(--green-deep);
+
+  /* Tipografía */
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fs-display: clamp(2.5rem, 1.1rem + 5.4vw, 5.25rem);
+  --fs-h2: clamp(1.85rem, 1rem + 2.8vw, 3.25rem);
+  --fs-lead: clamp(1rem, 0.95rem + 0.3vw, 1.1875rem);
+  --fs-small: 0.875rem;
+
+  /* Forma: una escala. Botones/tarjetas 6px, la navegación flotante es píldora. */
+  --radius: 6px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --gutter: clamp(24px, 6vw, 100px);
+  --maxw: 1700px;
+  --header-h: calc(64px + env(safe-area-inset-top, 0px));
+
+  /* Movimiento (Emil: curvas fuertes, nunca ease-in en UI) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* Capas */
+  --z-menu: 50;
+  --z-header: 60; /* sobre el menú móvil para que el botón Cerrar siga accesible */
+}
+
+/* Secciones oscuras (hero, menú móvil): redefinen los tokens semánticos */
+.theme-dark {
+  --bg: var(--ink-950);
+  --bg-alt: var(--ink-900);
+  --fg: var(--text);
+  --fg-muted: var(--text-muted);
+  --rule: var(--line-dark);
+  --focus: var(--green-soft);
+  --accent-text: var(--green-soft);
+  color: var(--fg);
+}
